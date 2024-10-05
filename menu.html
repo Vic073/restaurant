@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Max & Sherry</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css"> 
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js></script>
+    <script src="script.js"></script>
+    
+</head>
+
+<body>
+    <header>
+        <h1>MAX & SHERRY</h1>
+        <p>Where Flavor Meets Function</p>
+        <nav>
+            <ul>
+                <li><a href="index.html" onclick="setActive(this)">Home</a></li>
+                <li><a href="menu.html" class="active" onclick="setActive(this)">Menu</a></li>
+                <li><a href="contact.html" onclick="setActive(this)">Contact</a></li>
+                <li><a href="about.html" onclick="setActive(this)">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    <section class="menu">
+
+
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search for a dish..."> <i class="fas fa-search search-icon"></i>
+    
+        </div>
+
+        <h2>Our Menu</h2>
+        <div class="filter">
+            <button onclick="filterMenu('all')">All</button>
+            <button onclick="filterMenu('starters')">Starters</button>
+            <button onclick="filterMenu('main')">Main Courses</button>
+            <button onclick="filterMenu('desserts')">Desserts</button>
+            <button onclick="filterMenu('drinks')">Drinks</button>
+        </div>
+
+        <div class="menu-items">
+            <div class="menu-item starters">
+                <img src="starter1.jpg" alt="Starter 1" onclick="openModal('starter1.jpg', 'starter1 9')">
+                <h3>Bruschetta</h3>
+                <p>Toasted bread topped with tomatoes, garlic, and basil.</p>
+                <span>$8.00</span>
+                <button onclick="addToFavorites('Bruschetta')">Add to Favorites</button>
+            </div>
+
+            <div class="menu-item main">
+                <img src="main2.jpg" alt="Main Course 1" onclick="openModal('main2.jpg', 'Main Course 1')">
+                <h3>Grilled Salmon</h3>
+                <p>Fresh salmon fillet grilled to perfection.</p>
+                <span>$18.00</span>
+                <button onclick="addToFavorites('Grilled Salmon')">Add to Favorites</button>
+            </div>
+
+            <div class="menu-item desserts">
+                <img src="dessert1.jpg" alt="Dessert 1" onclick="openModal('dessert1.jpg', 'Dessert 1')">
+                <h3>Tiramisu</h3>
+                <p>Classic Italian coffee-flavored dessert.</p>
+                <span>$6.00</span>
+                <button onclick="addToFavorites('Tiramisu')">Add to Favorites</button>
+            </div>
+
+            <div class="menu-item drinks">
+                <img src="drink2.jpg" alt="Drink 1" onclick="openModal('drink2.jpg', 'Drink 1')">
+                <h3>Mojito</h3>
+                <p>Refreshing mint cocktail.</p>
+                <span>$5.00</span>
+                <button onclick="addToFavorites('Mojito')">Add to Favorites</button>
+            </div>
+
+            <div id="imageModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img class="modal-content" id="modalImage">
+                <div id="Caption"></div>
+            </div>
+            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Max and Sherry. All rights reserved.</p>
+        <div class="social-icons">
+            <a href=https://www.instagram.com target="_blank" aria-label="Instagram" class="instagram">
+                <I class="fab fa-instagram"></i>
+            </a>
+            <a href=https://x.com target="_blank" aria-label="X" class="x">
+                <I class="fab fa-twitter"></i>
+            </a>
+            <a href=https://www.facebook.com target="_blank" aria-label="Facebook" class="facebook">
+                <I class="fab fa-facebook-f"></i>
+            </a>
+            <a href=https://www.reddit.com target="_blank" aria-label="Reddit" class="reddit">
+                <I class="fab fa-reddit"></i>
+            </a>
+            
+        </div>
+    </footer>
+
+    <script>
+
+        const searchBar = document.getElementById('searchBar');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        searchBar.addEventListener('input', function() {
+            const searchText = searchBar.value.toLowerCase();
+
+            menuItems.forEach(function(item) {
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                if(itemName.includes(searchText)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            }
+        )
+        });
+        function setActive(element) {
+            const links = document.querySelectorAll("nav ul li a");
+            links.forEach(link => link.classList.remove("active"));
+            element.classList.add("active");
+        }
+
+
+        function filterMenu(category) {
+            const items = document.querySelectorAll(".menu-item");
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        function addToFavorites(dishName) {
+            alert(`${dishName} added to favorites!`);
+        }
+    </script>
+</body>
+
+</html>
+
+

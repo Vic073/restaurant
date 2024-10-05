@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max & Sherry</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MAX & SHERRY</h1>
+        <p>Where Flavor Meets Function</p>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <ul>
+                <li><a href="#" class="active" onclick="setActive(this)">Home</a></li>
+                <li><a href="menu.html" onclick="setActive(this)">Menu</a></li>
+                <li><a href="#" onclick="setActive(this)">Contact</a></li>
+                <li><a href="#" onclick="setActive(this)">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <div class="image-grid">
+            <img src="image1.jpg" alt="Food Image 1" class="framed" onclick="openModal('image1.jpg', 'Food Image 1')">
+            <img src="image2.jpg" alt="Food Image 2" class="framed" onclick="openModal('image2.jpg', 'Food Image 2')">
+            <img src="image3.jpg" alt="Food Image 3" class="framed" onclick="openModal('image3.jpg', 'Food Image 3')">
+            <img src="image4.jpg" alt="Food Image 4" class="framed" onclick="openModal('image4.jpg', 'Food Image 4')">
+            <img src="image5.jpg" alt="Food Image 5" class="framed" onclick="openModal('image5.jpg', 'Food Image 5')">
+            <img src="image6.jpg" alt="Food Image 6" class="framed" onclick="openModal('image6.jpg', 'Food Image 6')">
+            <img src="image7.jpg" alt="Food Image 7" class="framed" onclick="openModal('image7.jpg', 'Food Image 7')">
+            <img src="image8.jpg" alt="Food Image 8" class="framed" onclick="openModal('image8.jpg', 'Food Image 8')">
+            <img src="image9.jpg" alt="Food Image 9" class="framed" onclick="openModal('image9.jpg', 'Food Image 9')">
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="Caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Max and Sherry. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" class="instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com" target="_blank" aria-label="X" class="x">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook" class="facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.reddit.com" target="_blank" aria-label="Reddit" class="reddit">
+                <i class="fab fa-reddit"></i>
+            </a>
+            
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
+
+
+
+

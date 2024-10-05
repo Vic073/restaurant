@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    font-family: Georgia, Times, serif;
+    background-color: #2c5253;
+}
+
+
+.search-container{
+    margin: 30px auto;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+.search-container input{
+    width: 100%;
+    padding: 15px 40px 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-container input:focus {
+    outline: none;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-container .search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+
+
+
+/* Menu Section Styles */
+.menu {
+    padding: 50px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.menu h2 {
+    color: #3b4d42;
+    margin-bottom: 30px;
+}
+
+
+
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter button {
+    background-color: #3b4d42;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.menu-item {
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-item-hidden{
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.filter button:hover {
+    background-color: #2c5253;
+}
+
+
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    color: #3b4d42;
+}
+
+.menu-item p {
+    color: #555;
+}
+
+.menu-item span {
+    font-weight: bold;
+    color: #3b4d42;
+}
+
+.menu-item button {
+    margin-top: 10px;
+    background-color: #3b4d42;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.menu-item button:hover {
+    background-color: #2c5253;
+}
